@@ -1,0 +1,50 @@
+index.html
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keksin Painallus</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            cursor: pointer;
+            width: 200px;
+        }
+        .nooa-text {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="cookie" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Chocolate_Chip_Cookie.jpg" alt="Keksi">
+    <div id="text-container"></div>
+
+    <audio id="sound" src="https://www.soundjay.com/human/sounds/baby-crying-01.mp3"></audio>
+
+    <script>
+        document.getElementById('cookie').addEventListener('click', function() {
+            var textContainer = document.getElementById('text-container');
+            var nooaText = document.createElement('div');
+            nooaText.className = 'nooa-text';
+            nooaText.textContent = 'NOOA';
+            textContainer.appendChild(nooaText);
+
+            var sound = document.getElementById('sound');
+            sound.play();
+        });
+    </script>
+
+</body>
+</html>
